@@ -1,0 +1,53 @@
+name: Software Testing with Selenium
+slug: software-testing-with-selenium
+
+category: software
+subcategory: "Introduction to Software Engineering coursework (CS112)"
+
+status: completed
+
+visibility: public
+
+description:
+  short: "A non-functional/load-testing report using Selenium IDE against a university login page and Wikipedia's search."
+  long: |
+    A non-functional (load/stress) testing exercise using Selenium IDE's
+    record-and-playback tooling against two targets: Air University's
+    student-portal login page and Wikipedia's search engine. Built for an
+    Introduction to Software Engineering course (Air University, Semester
+    2, Spring 2024). See the Ethical Notice below regarding testing a
+    real, live third-party system.
+
+technologies: ["Selenium IDE", "Selenium WebDriver"]
+tags: ["software", "software-testing", "selenium", "qa"]
+
+repository:
+  provider: github
+  visibility: public
+  sync: true
+
+portfolio:
+  enabled: true
+  featured: false
+
+documentation:
+  readme: true
+  case_study: false
+
+dates:
+  started: null
+  completed: null
+
+links:
+  github: null
+  demo: null
+  documentation: null
+
+assets:
+  hero: null
+  screenshots:
+    - screenshots
+
+achievements: []
+
+metrics: []
