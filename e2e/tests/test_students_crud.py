@@ -47,7 +47,7 @@ def test_admin_can_delete_a_student(admin_dashboard):
 
 
 def test_staff_can_create_a_student_but_not_delete_it(staff_dashboard):
-    """Staff has CREATE_STUDENT but not DELETE_STUDENT (Project #7's
+    """Staff has CREATE_STUDENT but not DELETE_STUDENT (GuardSIS's
     permission matrix) -- both halves are visible in one browser flow.
     """
     email = _unique_email()

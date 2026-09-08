@@ -1,5 +1,5 @@
-name: Software Testing with Selenium
-slug: software-testing-with-selenium
+name: FlowCheck
+slug: flowcheck
 
 category: software
 subcategory: "Introduction to Software Engineering coursework (CS112)"
@@ -9,7 +9,7 @@ status: completed
 visibility: public
 
 description:
-  short: "A real Selenium WebDriver/pytest E2E suite (Page Object Model, RBAC-UI and forced-browsing tests) against Project #7, plus real Locust load results -- rebuilt from an original Selenium IDE report."
+  short: "A real Selenium WebDriver/pytest E2E suite (Page Object Model, RBAC-UI and forced-browsing tests) against GuardSIS, plus real Locust load results -- rebuilt from an original Selenium IDE report."
   long: |
     Originally a non-functional (load/stress) testing exercise using
     Selenium IDE's record-and-playback tooling against two targets: Air
@@ -20,10 +20,10 @@ description:
     authorization.
     Rebuilt with e2e/: a real, version-controlled Selenium WebDriver 4.48
     + pytest suite (Page Object Model, Page Component Objects, explicit
-    waits, Selenium Manager) retargeted entirely at Project #7 (a local
+    waits, Selenium Manager) retargeted entirely at GuardSIS (a local
     app this same effort built) -- login, CRUD, search, pagination, and
     real browser-level RBAC/forced-browsing verification, complementing
-    Project #7's own server-side pytest suite. Building it found and
+    GuardSIS's own server-side pytest suite. Building it found and
     fixed six real bugs, including a genuine rate-limiting bug in Project
     #7 itself. A separate Locust HTTP-level load experiment (1/5/10/20
     simulated users) produced real, committed quantitative results.
@@ -61,13 +61,13 @@ assets:
 achievements: []
 
 metrics:
-  - label: "e2e: Selenium tests passing (real browser, live Project #7 app)"
+  - label: "e2e: Selenium tests passing (real browser, live GuardSIS app)"
     value: "25/25"
     verified: true
   - label: "e2e: Ruff lint issues"
     value: "0"
     verified: true
-  - label: "Real bugs found and fixed (5 in e2e/, 1 in Project #7 itself)"
+  - label: "Real bugs found and fixed (5 in e2e/, 1 in GuardSIS itself)"
     value: "6"
     verified: true
   - label: "Locust load test: failure rate at 1 vs. 20 concurrent users"

@@ -13,7 +13,7 @@ def test_search_with_no_matches_shows_empty_state(admin_dashboard):
 
 def test_literal_percent_in_search_is_not_treated_as_a_wildcard(admin_dashboard):
     """Real-browser confirmation of the icontains(autoescape=True)
-    behavior Project #7's own pytest suite already covers at the HTTP
+    behavior GuardSIS's own pytest suite already covers at the HTTP
     layer -- here confirming what an actual user typing "%" and expecting
     literal-character behavior actually sees rendered.
     """

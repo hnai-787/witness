@@ -1,7 +1,7 @@
 name: e2e CI
 
 # Honest scope limitation (see README "CI limitation"): this suite tests
-# a SEPARATE, independent repository (Project #7, secure-student
+# a SEPARATE, independent repository (GuardSIS, secure-student
 # -management-system) that this workspace deliberately does not vendor
 # as a submodule. A real GitHub Actions run here has no way to check out
 # that sibling repo without one, so this workflow validates what it

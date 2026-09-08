@@ -69,9 +69,9 @@ def _authenticate_via_http(username: str, password: str) -> str:
 
     Why: a real bug found while first running this suite -- every test
     doing its own full browser-driven login form submission collectively
-    exceeded Project #7's own real rate limiter (20/min per IP, 5/5min
+    exceeded GuardSIS's own real rate limiter (20/min per IP, 5/5min
     per account) within the first dozen tests, since they all share one
-    machine's IP and the same two seeded accounts. Project #7's own
+    machine's IP and the same two seeded accounts. GuardSIS's own
     research explicitly sanctions this pattern: "establishing a session
     through a safe test helper" is a defensible way to set up
     prerequisite state, reserving actual browser-driven login submission

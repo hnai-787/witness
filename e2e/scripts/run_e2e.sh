@@ -1,13 +1,13 @@
 #!/bin/bash
-# Seed a disposable E2E database, start Project #7's Flask app, run the
-# Selenium suite against it, then stop the app. Assumes Project #7
-# (secure-student-management-system) lives as a sibling under
+# Seed a disposable E2E database, start GuardSIS's Flask app, run the
+# Selenium suite against it, then stop the app. Assumes GuardSIS
+# (the secure student management system) lives as a sibling under
 # projects/cybersecurity/ in this same workspace -- override via
-# PROJECT7_DIR if that's not the case.
+# GUARDSIS_DIR if that's not the case.
 set -e
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT7_DIR="${PROJECT7_DIR:-$HERE/../../../cybersecurity/secure-student-management-system}"
+GUARDSIS_DIR="${GUARDSIS_DIR:-$HERE/../../../cybersecurity/guardsis}"
 
 export FLASK_ENV=development
 export FLASK_DEBUG=0
@@ -17,11 +17,11 @@ export WTF_CSRF_SECRET_KEY="${WTF_CSRF_SECRET_KEY:-e2e-dev-csrf-secret-not-for-p
 export RATELIMIT_STORAGE_URI="${RATELIMIT_STORAGE_URI:-memory://}"
 export BASE_URL="http://127.0.0.1:${PORT}"
 
-echo "== seeding E2E database in $PROJECT7_DIR =="
-(cd "$PROJECT7_DIR/src" && "$PROJECT7_DIR/.venv/Scripts/python" seed_e2e.py)
+echo "== seeding E2E database in $GUARDSIS_DIR =="
+(cd "$GUARDSIS_DIR/src" && "$GUARDSIS_DIR/.venv/Scripts/python" seed_e2e.py)
 
-echo "== starting Project #7 app on $BASE_URL =="
-(cd "$PROJECT7_DIR/src" && "$PROJECT7_DIR/.venv/Scripts/python" app.py > "$HERE/../results/app.log" 2>&1 &)
+echo "== starting GuardSIS app on $BASE_URL =="
+(cd "$GUARDSIS_DIR/src" && "$GUARDSIS_DIR/.venv/Scripts/python" app.py > "$HERE/../results/app.log" 2>&1 &)
 
 echo "== waiting for the app to respond =="
 for _ in $(seq 1 30); do

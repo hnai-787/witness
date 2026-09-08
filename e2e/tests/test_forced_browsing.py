@@ -24,7 +24,7 @@ def test_anonymous_cannot_force_browse_any_authenticated_page(driver, base_url, 
 def test_staff_forced_delete_url_is_not_found_via_get_but_is_not_a_bypass(authenticated_staff_driver, base_url):
     """GET on a POST-only mutation route legitimately returns 405, which
     proves the GET method is unavailable -- NOT that Staff is denied the
-    destructive POST. That stronger claim is Project #7's own pytest
+    destructive POST. That stronger claim is GuardSIS's own pytest
     suite's job (a real POST as Staff -> 403). This test exists only to
     document that distinction, not to substitute for it.
     """
