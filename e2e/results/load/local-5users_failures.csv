@@ -1,0 +1,4 @@
+Method,Name,Error,Occurrences,First Seen,Last Seen
+GET,/dashboard,HTTPError('429 Client Error: TOO MANY REQUESTS for url: /dashboard'),6,2026-09-08T20:04:52Z,2026-09-08T20:04:54Z
+GET,/dashboard?page=2&per_page=5,HTTPError('429 Client Error: TOO MANY REQUESTS for url: /dashboard?page=2&per_page=5'),2,2026-09-08T20:04:52Z,2026-09-08T20:04:53Z
+GET,/dashboard?q=London,HTTPError('429 Client Error: TOO MANY REQUESTS for url: /dashboard?q=London'),4,2026-09-08T20:04:53Z,2026-09-08T20:04:55Z

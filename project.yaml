@@ -9,17 +9,27 @@ status: completed
 visibility: public
 
 description:
-  short: "A non-functional/load-testing report using Selenium IDE against a university login page and Wikipedia's search."
+  short: "A real Selenium WebDriver/pytest E2E suite (Page Object Model, RBAC-UI and forced-browsing tests) against Project #7, plus real Locust load results -- rebuilt from an original Selenium IDE report."
   long: |
-    A non-functional (load/stress) testing exercise using Selenium IDE's
-    record-and-playback tooling against two targets: Air University's
-    student-portal login page and Wikipedia's search engine. Built for an
-    Introduction to Software Engineering course (Air University, Semester
-    2, Spring 2024). See the Ethical Notice below regarding testing a
-    real, live third-party system.
+    Originally a non-functional (load/stress) testing exercise using
+    Selenium IDE's record-and-playback tooling against two targets: Air
+    University's student-portal login page and Wikipedia's search engine.
+    Built for an Introduction to Software Engineering course (Air
+    University, Semester 2, Spring 2024). See the Ethical Notice
+    regarding testing a real, live third-party system without documented
+    authorization.
+    Rebuilt with e2e/: a real, version-controlled Selenium WebDriver 4.48
+    + pytest suite (Page Object Model, Page Component Objects, explicit
+    waits, Selenium Manager) retargeted entirely at Project #7 (a local
+    app this same effort built) -- login, CRUD, search, pagination, and
+    real browser-level RBAC/forced-browsing verification, complementing
+    Project #7's own server-side pytest suite. Building it found and
+    fixed six real bugs, including a genuine rate-limiting bug in Project
+    #7 itself. A separate Locust HTTP-level load experiment (1/5/10/20
+    simulated users) produced real, committed quantitative results.
 
-technologies: ["Selenium IDE", "Selenium WebDriver"]
-tags: ["software", "software-testing", "selenium", "qa"]
+technologies: ["Selenium IDE", "Selenium WebDriver", "Python", "pytest", "Locust", "Ruff", "GitHub Actions"]
+tags: ["software", "software-testing", "selenium", "qa", "e2e-testing", "load-testing", "page-object-model"]
 
 repository:
   provider: github
@@ -28,7 +38,7 @@ repository:
 
 portfolio:
   enabled: true
-  featured: false
+  featured: true
 
 documentation:
   readme: true
@@ -50,4 +60,16 @@ assets:
 
 achievements: []
 
-metrics: []
+metrics:
+  - label: "e2e: Selenium tests passing (real browser, live Project #7 app)"
+    value: "25/25"
+    verified: true
+  - label: "e2e: Ruff lint issues"
+    value: "0"
+    verified: true
+  - label: "Real bugs found and fixed (5 in e2e/, 1 in Project #7 itself)"
+    value: "6"
+    verified: true
+  - label: "Locust load test: failure rate at 1 vs. 20 concurrent users"
+    value: "0.0% -> 88.7%"
+    verified: true

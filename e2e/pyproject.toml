@@ -1,0 +1,23 @@
+[project]
+name = "e2e-tests"
+version = "1.0.0"
+description = "Selenium WebDriver + pytest E2E suite for the Project #7 Secure Student Management System"
+requires-python = ">=3.11"
+dependencies = [
+    "selenium>=4.48,<5",
+    "requests>=2.31,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+load = ["locust>=2.46,<3"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

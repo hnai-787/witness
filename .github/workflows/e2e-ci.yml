@@ -1,0 +1,48 @@
+name: e2e CI
+
+# Honest scope limitation (see README "CI limitation"): this suite tests
+# a SEPARATE, independent repository (Project #7, secure-student
+# -management-system) that this workspace deliberately does not vendor
+# as a submodule. A real GitHub Actions run here has no way to check out
+# that sibling repo without one, so this workflow validates what it
+# actually can in isolation -- linting and test collection -- and
+# documents that full live execution (`scripts/run_e2e.sh`) and the
+# Locust load experiments are local-only, matching how this project's
+# own research treated performance measurement as a documented local
+# run rather than a CI regression gate.
+
+on:
+  push:
+    paths:
+      - "e2e/**"
+      - ".github/workflows/e2e-ci.yml"
+  pull_request:
+    paths:
+      - "e2e/**"
+      - ".github/workflows/e2e-ci.yml"
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: e2e
+
+jobs:
+  lint-and-collect:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
+        with:
+          python-version: "3.12"
+
+      - name: Install package and dev dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Lint (Ruff)
+        run: ruff check src tests load scripts
+
+      - name: Collect tests (import/fixture sanity check, no live server needed)
+        run: pytest --collect-only -q
