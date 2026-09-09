@@ -1,5 +1,8 @@
 # FlowCheck — Selenium/pytest E2E Suite for GuardSIS
 
+![flowcheck banner](assets/brand/flowcheck-readme-banner.png)
+
+
 ## Course Information
 
 | Field | Details |
@@ -87,6 +90,10 @@ testing was done via Selenium IDE's point-and-click recorder.
    against its live app, debug every real failure down to zero (six real
    bugs found and fixed — see `PROJECT_NOTES.md`), and run four real
    Locust load levels for genuine quantitative results.
+
+## How It Works
+
+![How flowcheck works](assets/brand/flowcheck-how-it-works.png)
 
 ## Repository Structure
 
