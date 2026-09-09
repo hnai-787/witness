@@ -1,13 +1,13 @@
 #!/bin/bash
-# Seed a disposable E2E database, start GuardSIS's Flask app, run the
-# Selenium suite against it, then stop the app. Assumes GuardSIS
+# Seed a disposable E2E database, start Rollkeeper's Flask app, run the
+# Selenium suite against it, then stop the app. Assumes Rollkeeper
 # (the secure student management system) lives as a sibling under
 # projects/cybersecurity/ in this same workspace -- override via
-# GUARDSIS_DIR if that's not the case.
+# ROLLKEEPER_DIR if that's not the case.
 set -e
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-GUARDSIS_DIR="${GUARDSIS_DIR:-$HERE/../../../cybersecurity/guardsis}"
+ROLLKEEPER_DIR="${ROLLKEEPER_DIR:-$HERE/../../../cybersecurity/rollkeeper}"
 
 export FLASK_ENV=development
 export FLASK_DEBUG=0
@@ -17,11 +17,11 @@ export WTF_CSRF_SECRET_KEY="${WTF_CSRF_SECRET_KEY:-e2e-dev-csrf-secret-not-for-p
 export RATELIMIT_STORAGE_URI="${RATELIMIT_STORAGE_URI:-memory://}"
 export BASE_URL="http://127.0.0.1:${PORT}"
 
-echo "== seeding E2E database in $GUARDSIS_DIR =="
-(cd "$GUARDSIS_DIR/src" && "$GUARDSIS_DIR/.venv/Scripts/python" seed_e2e.py)
+echo "== seeding E2E database in $ROLLKEEPER_DIR =="
+(cd "$ROLLKEEPER_DIR/src" && "$ROLLKEEPER_DIR/.venv/Scripts/python" seed_e2e.py)
 
-echo "== starting GuardSIS app on $BASE_URL =="
-(cd "$GUARDSIS_DIR/src" && "$GUARDSIS_DIR/.venv/Scripts/python" app.py > "$HERE/../results/app.log" 2>&1 &)
+echo "== starting Rollkeeper app on $BASE_URL =="
+(cd "$ROLLKEEPER_DIR/src" && "$ROLLKEEPER_DIR/.venv/Scripts/python" app.py > "$HERE/../results/app.log" 2>&1 &)
 
 echo "== waiting for the app to respond =="
 for _ in $(seq 1 30); do

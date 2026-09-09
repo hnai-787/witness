@@ -1,7 +1,7 @@
 [project]
 name = "e2e-tests"
 version = "1.0.0"
-description = "Selenium WebDriver + pytest E2E suite for the GuardSIS GuardSIS"
+description = "Selenium WebDriver + pytest E2E suite for the Rollkeeper Rollkeeper"
 requires-python = ">=3.11"
 dependencies = [
     "selenium>=4.48,<5",

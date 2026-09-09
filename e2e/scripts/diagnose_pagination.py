@@ -14,7 +14,7 @@ PROJECT_NOTES.md), rather than fixed by guessing. Confirms:
   scroll-based fix can work around, which is why the real fix
   (pagination.py) uses a JS-native click instead.
 
-Requires a running GuardSIS app seeded via seed_e2e.py (see
+Requires a running Rollkeeper app seeded via seed_e2e.py (see
 scripts/run_e2e.sh) at BASE_URL below.
 """
 

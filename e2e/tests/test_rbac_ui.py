@@ -1,6 +1,6 @@
-"""Real-browser confirmation of GuardSIS's role-based UI.
+"""Real-browser confirmation of Rollkeeper's role-based UI.
 
-Absence, not disabled: GuardSIS's intended contract is that Staff is
+Absence, not disabled: Rollkeeper's intended contract is that Staff is
 never OFFERED admin-only actions at all (see permissions.py), so these
 assertions check that the controls are absent from the DOM
 (`find_elements` returning an empty list), not merely disabled -- see
@@ -8,7 +8,7 @@ README "RBAC UI testing: absence vs. disabled".
 
 Hidden UI is not authorization (OWASP): these tests only prove the
 browser experience matches the intended security boundary. They do NOT
-prove the boundary itself is enforced -- that's GuardSIS's own pytest
+prove the boundary itself is enforced -- that's Rollkeeper's own pytest
 suite (server-side, via direct POST/GET requests bypassing the UI
 entirely). See test_forced_browsing.py for the browser-level complement:
 confirming Staff can't reach a privileged page even by typing its URL.

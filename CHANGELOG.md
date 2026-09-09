@@ -16,7 +16,7 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 ### Added
 
 - **`e2e/`**: a real, version-controlled Selenium WebDriver 4.48 + pytest
-  suite retargeted at GuardSIS (a local app this same effort built),
+  suite retargeted at Rollkeeper (a local app this same effort built),
   replacing the original's untracked Selenium IDE recordings against a
   real, live third-party site. Page Object Model + Page Component
   Objects (`src/e2e_tests/pages/`, `components/`), explicit waits,
@@ -29,7 +29,7 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
   (`results/load/`, 1/5/10/20 simulated users) with a written summary
   (`results/load/SUMMARY.md`) — genuine quantitative results, replacing
   the original's qualitative-only findings.
-- `scripts/run_e2e.sh` (seed + start GuardSIS + run the suite) and
+- `scripts/run_e2e.sh` (seed + start Rollkeeper + run the suite) and
   `scripts/diagnose_pagination.py` (the real diagnostic script that
   root-caused a headless-Chrome viewport quirk, kept as evidence).
 - `.github/workflows/e2e-ci.yml`: Ruff + `pytest --collect-only`
@@ -47,7 +47,7 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 Six real bugs found and fixed while getting this suite to 25/25 (full
 writeups in `PROJECT_NOTES.md`):
 
-- A real bug in **GuardSIS itself**: its per-account login rate
+- A real bug in **Rollkeeper itself**: its per-account login rate
   limiter was unintentionally applying to plain GET requests, not just
   login attempts (fixed there, with a new regression test).
 - A CSRF-token regex in this suite that assumed attribute adjacency

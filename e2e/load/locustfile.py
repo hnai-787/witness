@@ -1,4 +1,4 @@
-"""Controlled local HTTP concurrency characterization for GuardSIS.
+"""Controlled local HTTP concurrency characterization for Rollkeeper.
 
 Deliberately NOT a Selenium-driven load test -- Selenium's own guidance
 places performance testing in its discouraged-practices list, because
@@ -8,7 +8,7 @@ This models users at the HTTP level instead (Locust's `HttpUser`, which
 maintains cookies so it can hold a real authenticated session), covering
 exactly the workload real users generate once logged in: browse, search,
 paginate. It deliberately does NOT hammer the login endpoint -- that
-would mostly measure GuardSIS's own deliberate rate limiter, not
+would mostly measure Rollkeeper's own deliberate rate limiter, not
 application throughput (there's a separate, small, low-volume login
 check below to keep an eye on that, weighted far below the read
 workload).

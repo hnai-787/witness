@@ -1,1 +1,1 @@
-"""Selenium WebDriver + pytest E2E suite for GuardSIS (GuardSIS)."""
+"""Selenium WebDriver + pytest E2E suite for Rollkeeper (Rollkeeper)."""

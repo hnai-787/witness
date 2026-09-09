@@ -1,6 +1,6 @@
 # Load Test Summary
 
-Real, measured results from four local Locust runs against GuardSIS
+Real, measured results from four local Locust runs against Rollkeeper
 (`load/locustfile.py`, `AuthenticatedReadUser`: login once, then browse
 /search/paginate `/dashboard`). One Flask dev-server process
 (`memory://` rate-limit storage), fresh-restarted before each level so
@@ -20,7 +20,7 @@ of only 19 total requests — not representative at that sample size.
 ## The finding
 
 This is a real capacity characterization, not a flattering one, and it's
-reported as found: GuardSIS's `default_limits=["100 per hour"]`
+reported as found: Rollkeeper's `default_limits=["100 per hour"]`
 (app-wide, keyed per IP) saturates almost immediately once concurrent
 traffic shares one IP address -- exactly what any NAT'd office network,
 or this local experiment where all simulated users share `127.0.0.1`,
@@ -30,10 +30,10 @@ exhausted, essentially every subsequent request in that hour gets a 429
 regardless of which user or route it's for.
 
 This is not the same issue as the real GET-vs-POST `/login` rate-limit
-bug found and fixed in GuardSIS during this project's own test
+bug found and fixed in Rollkeeper during this project's own test
 development (see `../../PROJECT_NOTES.md`) — that was a key-function
 bug causing an unintended limiter to apply to the wrong requests. This
-is GuardSIS's own *deliberate* app-wide default, which is a reasonable
+is Rollkeeper's own *deliberate* app-wide default, which is a reasonable
 choice for a coursework security demonstration (aggressively resisting
 abuse) but would need to be raised, scoped more precisely (e.g.
 exempting authenticated read-only routes, or a per-user rather than
@@ -46,7 +46,7 @@ users behind the same address.
 - OS: Windows 11, Flask dev server (`python app.py`), SQLite
 - Python 3.12, Flask 3.1.3, Flask-Limiter 4.1.1, Locust 2.46.5
 - `RATELIMIT_STORAGE_URI=memory://` (single process, in-memory -- see
-  GuardSIS's own README for why this doesn't scale to multiple workers)
+  Rollkeeper's own README for why this doesn't scale to multiple workers)
 - Reproduce: `../scripts/run_e2e.sh` starts the app; then run the
   `locust` command from `../README.md` "Usage" at each user count.
 
