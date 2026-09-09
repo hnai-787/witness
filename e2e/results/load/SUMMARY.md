@@ -34,7 +34,7 @@ bug found and fixed in Rollkeeper during this project's own test
 development (see `../../PROJECT_NOTES.md`) — that was a key-function
 bug causing an unintended limiter to apply to the wrong requests. This
 is Rollkeeper's own *deliberate* app-wide default, which is a reasonable
-choice for a coursework security demonstration (aggressively resisting
+choice for a portfolio security demonstration (aggressively resisting
 abuse) but would need to be raised, scoped more precisely (e.g.
 exempting authenticated read-only routes, or a per-user rather than
 per-IP key for non-auth routes), or backed by a shared, larger-budget

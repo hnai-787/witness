@@ -32,7 +32,7 @@ Separate: Locust HttpUser -> local Flask endpoints -> RPS / failures / median / 
 
 ## Why this project changed targets
 
-The original coursework load-tested Air University's real, live
+The original version load-tested 's real, live
 student-portal login page and Wikipedia's search, without documented
 authorization for the former, and captured no quantitative results. The
 rebuilt suite targets a locally controlled application (Rollkeeper,

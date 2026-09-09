@@ -34,7 +34,7 @@ IDE UI and Wikipedia).
 
 ### What changed and why
 
-The original coursework load-tested a real, live third-party system (Air
+The original version load-tested a real, live third-party system (Air
 University's student portal) with no documented authorization, and
 captured no exported test scripts or quantitative results. The rebuild
 retargets entirely at Rollkeeper (the Rollkeeper,

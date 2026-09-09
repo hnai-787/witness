@@ -2,7 +2,7 @@ name: Witness
 slug: witness
 
 category: software
-subcategory: "Introduction to Software Engineering coursework (CS112)"
+subcategory: "Software Engineering"
 
 status: completed
 
@@ -12,10 +12,9 @@ description:
   short: "A real Selenium WebDriver/pytest E2E suite (Page Object Model, RBAC-UI and forced-browsing tests) against Rollkeeper, plus real Locust load results -- rebuilt from an original Selenium IDE report."
   long: |
     Originally a non-functional (load/stress) testing exercise using
-    Selenium IDE's record-and-playback tooling against two targets: Air
-    University's student-portal login page and Wikipedia's search engine.
-    Built for an Introduction to Software Engineering course (Air
-    University, Semester 2, Spring 2024). See the Ethical Notice
+    Selenium IDE's record-and-playback tooling against two targets: a
+    university's student-portal login page and Wikipedia's search engine.
+    See the Ethical Notice
     regarding testing a real, live third-party system without documented
     authorization.
     Rebuilt with e2e/: a real, version-controlled Selenium WebDriver 4.48
