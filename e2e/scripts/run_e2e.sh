@@ -7,7 +7,7 @@
 set -e
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROLLKEEPER_DIR="${ROLLKEEPER_DIR:-$HERE/../../../cybersecurity/rollkeeper}"
+ROLLKEEPER_DIR="${ROLLKEEPER_DIR:-$HERE/../../../../cybersecurity/rollkeeper}"
 
 export FLASK_ENV=development
 export FLASK_DEBUG=0
